@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muhammad Faraz — Flutter Developer & UI/UX Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <!-- NOISE OVERLAY -->
+    <div class="noise"></div>
+
+    <!-- CURSOR -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-logo">MF<span class="dot">.</span></div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <canvas id="particleCanvas"></canvas>
+
+        <div class="hero-content">
+            <p class="hero-eyebrow reveal-up">Based in Karachi, Pakistan</p>
+            <h1 class="hero-name">
+                <span class="glitch" data-text="Muhammad">Muhammad</span><br />
+                <span class="glitch accent-text" data-text="Faraz">Faraz</span>
+            </h1>
+            <p class="hero-role reveal-up">
+                <span class="role-tag">Flutter Developer</span>
+                <span class="role-sep">&</span>
+                <span class="role-tag">UI/UX Designer</span>
+            </p>
+            <p class="hero-bio reveal-up">
+                Building production-grade mobile experiences where<br class="hide-mobile" />
+                clean architecture meets pixel-perfect design.
+            </p>
+            <div class="hero-cta reveal-up">
+                <a href="#projects" class="btn btn-primary">View Work</a>
+                <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+            </div>
+        </div>
+
+        <!-- <div class="hero-scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
+        </div> -->
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 class="section-title reveal-up">About Me</h2>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="about-lead reveal-up">
+                        I'm a Flutter Developer & UI/UX Designer with ~2 years of hands-on experience building
+                        production-grade mobile applications.
+                    </p>
+                    <p class="about-body reveal-up">
+                        My work lives at the intersection of code and design — proficient in BLoC state management,
+                        Firebase integration, and clean architecture. I combine development with UI/UX design to create
+                        polished, user-friendly apps that people love.
+                    </p>
+                    <div class="about-meta reveal-up">
+                        <div class="meta-item">
+                            <span class="meta-label">Education</span>
+                            <span class="meta-value">BS Computer Science — Iqra University, 2020–2026</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Experience</span>
+                            <span class="meta-value">Junior Flutter Dev & UI/UX Designer — Zelle Solutions</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Certification</span>
+                            <span class="meta-value">Python Essentials — Jawan Pakistan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-visual reveal-right">
+                    <div class="av-card">
+                        <div class="av-initials">MF</div>
+                        <div class="av-stats">
+                            <div class="av-stat">
+                                <span class="av-num counter" data-target="2">0</span>
+                                <span class="av-unit">+</span>
+                                <span class="av-label">Years Exp.</span>
+                            </div>
+                            <div class="av-stat">
+                                <span class="av-num counter" data-target="3">0</span>
+                                <span class="av-unit">+</span>
+                                <span class="av-label">Projects</span>
+                            </div>
+                            <div class="av-stat">
+                                <span class="av-num counter" data-target="5">0</span>
+                                <span class="av-unit">+</span>
+                                <span class="av-label">Technologies</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="av-decoration"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title reveal-up">Tech Stack</h2>
+            </div>
+
+            <div class="skills-categories">
+
+                <div class="skill-category reveal-up">
+                    <h3 class="cat-title">Mobile Development</h3>
+                    <div class="skill-pills">
+                        <span class="pill pill-primary">Flutter</span>
+                        <span class="pill pill-primary">Dart</span>
+                        <span class="pill">BLoC</span>
+                        <span class="pill">Cubit</span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal-up">
+                    <h3 class="cat-title">Backend & Services</h3>
+                    <div class="skill-pills">
+                        <span class="pill pill-primary">Firebase</span>
+                        <span class="pill">Firestore</span>
+                        <span class="pill">REST APIs</span>
+                        <span class="pill">Auth</span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal-up">
+                    <h3 class="cat-title">Architecture</h3>
+                    <div class="skill-pills">
+                        <span class="pill">Clean Architecture</span>
+                        <span class="pill">Repository Pattern</span>
+                        <span class="pill">Dependency Injection</span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal-up">
+                    <h3 class="cat-title">Design & Tools</h3>
+                    <div class="skill-pills">
+                        <span class="pill pill-primary">Figma</span>
+                        <span class="pill">UI/UX</span>
+                        <span class="pill">Git</span>
+                        <span class="pill">GitHub</span>
+                        <span class="pill">Python</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Marquee strip -->
+            <div class="marquee-wrap">
+                <div class="marquee-track">
+                    <span>Flutter</span><span>·</span>
+                    <span>Firebase</span><span>·</span>
+                    <span>BLoC</span><span>·</span>
+                    <span>Figma</span><span>·</span>
+                    <span>Dart</span><span>·</span>
+                    <span>Clean Architecture</span><span>·</span>
+                    <span>REST APIs</span><span>·</span>
+                    <span>UI/UX</span><span>·</span>
+                    <span>Flutter</span><span>·</span>
+                    <span>Firebase</span><span>·</span>
+                    <span>BLoC</span><span>·</span>
+                    <span>Figma</span><span>·</span>
+                    <span>Dart</span><span>·</span>
+                    <span>Clean Architecture</span><span>·</span>
+                    <span>REST APIs</span><span>·</span>
+                    <span>UI/UX</span><span>·</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title reveal-up">Projects</h2>
+            </div>
+
+            <div class="projects-grid">
+
+                <div class="project-card reveal-up" data-index="01">
+                    <div class="project-top">
+                        <span class="project-index">01</span>
+                        <div class="project-links">
+                            <a href="https://github.com/MuhammadFaraz032/task-manager" target="_blank" class="proj-link"
+                                aria-label="GitHub">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Task Management<br />Dashboard</h3>
+                    <p class="project-desc">Production-ready task management app with BLoC, real-time Firestore sync,
+                        email auth, task prioritization, and dark/light theming.</p>
+                    <div class="project-tags">
+                        <span>Flutter</span><span>BLoC</span><span>Firebase</span><span>Clean Arch</span>
+                    </div>
+                    <div class="project-status">
+                        <span class="status-dot"></span> MVP Complete
+                    </div>
+                </div>
+
+                <div class="project-card reveal-up" data-index="02">
+                    <div class="project-top">
+                        <span class="project-index">02</span>
+                        <div class="project-links"></div>
+                    </div>
+                    <h3 class="project-title">Lumora — Mental<br />Health App</h3>
+                    <p class="project-desc">Final year project at Iqra University. Mobile app for mental wellness
+                        featuring mood tracking and a chatbot, designed with accessibility and calm UX at its core.</p>
+                    <div class="project-tags">
+                        <span>Flutter</span><span>Firebase</span><span>REST API</span><span>Figma</span>
+                    </div>
+                    <div class="project-status">
+                        <span class="status-dot status-purple"></span> Final Year Project
+                    </div>
+                </div>
+
+                <div class="project-card reveal-up" data-index="03">
+                    <div class="project-top">
+                        <span class="project-index">03</span>
+                        <div class="project-links">
+                            <a href="https://github.com/MuhammadFaraz032/portfolio" target="_blank" class="proj-link"
+                                aria-label="GitHub">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                                </svg>
+                            </a>
+                            <a href="https://muhammadfaraz032.github.io/portfolio" target="_blank" class="proj-link"
+                                aria-label="Live Demo">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Portfolio<br />Website</h3>
+                    <p class="project-desc">Responsive personal portfolio showcasing Flutter development work. Built
+                        with HTML/CSS and deployed via GitHub Pages.</p>
+                    <div class="project-tags">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                    </div>
+                    <div class="project-status">
+                        <span class="status-dot"></span> Live
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="section-title reveal-up">Get In Touch</h2>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-left reveal-up">
+                    <p class="contact-lead">Have a project in mind or want to collaborate? My inbox is always open.</p>
+                    <div class="contact-info">
+                        <a href="mailto:faraznawaz598@gmail.com" class="contact-item">
+                            <span class="ci-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                </svg>
+                            </span>
+                            <span>faraznawaz598@gmail.com</span>
+                        </a>
+                        <a href="https://linkedin.com/in/muhammad-faraz-b619002b2" target="_blank" class="contact-item">
+                            <span class="ci-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                    <rect x="2" y="9" width="4" height="12" />
+                                    <circle cx="4" cy="4" r="2" />
+                                </svg>
+                            </span>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/MuhammadFaraz032" target="_blank" class="contact-item">
+                            <span class="ci-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                                </svg>
+                            </span>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
+
+                <form class="contact-form reveal-up" id="contactForm" action="https://formspree.io/f/mbdejwla" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Tell me about your project..." rows="5"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <span>Send Message</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13" />
+                            <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <span class="footer-logo">MF<span class="dot">.</span></span>
+                <p class="footer-copy">© 2025 Muhammad Faraz. Built with passion.</p>
+                <div class="footer-links">
+                    <a href="https://github.com/MuhammadFaraz032" target="_blank">GitHub</a>
+                    <a href="https://linkedin.com/in/muhammad-faraz-b619002b2" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
