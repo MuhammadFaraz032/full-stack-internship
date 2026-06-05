@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProjectEra — Real-Time Task Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <a href="#" class="nav-logo">Project<span>Era</span></a>
+        <ul class="nav-links">
+            <li><a href="#services">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact" class="nav-cta">Get Started</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#services" onclick="closeMobile()">Features</a>
+        <a href="#pricing" onclick="closeMobile()">Pricing</a>
+        <a href="#testimonials" onclick="closeMobile()">Reviews</a>
+        <a href="#faq" onclick="closeMobile()">FAQ</a>
+        <a href="#contact" onclick="closeMobile()">Get Started →</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-badge">Now available on Flutter</div>
+        <h1>
+            Manage tasks.<br />
+            <span class="line2">Ship faster.</span><br />
+            <span class="accent">Together.</span>
+        </h1>
+        <p class="hero-sub">
+            ProjectEra is a real-time collaborative task management app built with Flutter and Firebase. Organize
+            projects, prioritize work, and collaborate live — across every device.
+        </p>
+        <div class="hero-actions">
+            <a href="#contact" class="btn-primary">Start Free →</a>
+            <a href="#features" class="btn-ghost">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <polygon points="10 8 16 12 10 16 10 8" />
+                </svg>
+                See Features
+            </a>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <div class="stat-val">15<span>K+</span></div>
+                <div class="stat-label">Tasks Completed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-val">98<span>%</span></div>
+                <div class="stat-label">Uptime</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-val">4<span>.9★</span></div>
+                <div class="stat-label">User Rating</div>
+            </div>
+        </div>
+
+        <!-- FLOATING MOCKUP -->
+        <div class="hero-visual">
+            <div class="mockup-card">
+                <div class="mockup-header">
+                    <span class="mockup-title">Sprint #4 — Backend API</span>
+                    <span class="mockup-badge">● Live</span>
+                </div>
+
+                <div class="mockup-task">
+                    <div class="task-check done"></div>
+                    <div class="task-info">
+                        <div class="task-name done">Set up Firebase Auth</div>
+                        <div class="task-meta">Completed · 2h ago</div>
+                    </div>
+                    <span class="priority p-high">High</span>
+                </div>
+
+                <div class="mockup-task">
+                    <div class="task-check progress"></div>
+                    <div class="task-info">
+                        <div class="task-name">Implement TaskBloc streams</div>
+                        <div class="task-meta">In Progress · Sara</div>
+                    </div>
+                    <span class="priority p-med">Med</span>
+                </div>
+
+                <div class="mockup-task">
+                    <div class="task-check pending"></div>
+                    <div class="task-info">
+                        <div class="task-name">Write unit tests for AuthBloc</div>
+                        <div class="task-meta">Due tomorrow · Alex</div>
+                    </div>
+                    <span class="priority p-low">Low</span>
+                </div>
+
+                <div class="mockup-task">
+                    <div class="task-check pending"></div>
+                    <div class="task-info">
+                        <div class="task-name">Deploy to Firebase Hosting</div>
+                        <div class="task-meta">Unassigned</div>
+                    </div>
+                    <span class="priority p-high">High</span>
+                </div>
+
+                <div class="mockup-progress">
+                    <div class="prog-label">
+                        <span>Sprint Progress</span>
+                        <span>68%</span>
+                    </div>
+                    <div class="prog-bar">
+                        <div class="prog-fill"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <p class="section-eyebrow reveal">Core Features</p>
+        <h2 class="section-heading reveal">Everything your team needs to ship</h2>
+        <p class="section-sub reveal">Built on Firebase with real-time sync and clean BLoC architecture — so your data
+            is always fresh and your code always clean.</p>
+
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <div class="service-icon ic-green">🔥</div>
+                <h3>Real-Time Collaboration</h3>
+                <p>Powered by Firebase Firestore streams. Every task update, priority change, and status toggle syncs
+                    instantly across all connected devices — no refresh required.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon ic-blue">🗂️</div>
+                <h3>Project Management</h3>
+                <p>Organize work into color-coded projects with progress indicators. Create, edit, and archive projects
+                    with full CRUD support and visual completion tracking.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon ic-amber">🔐</div>
+                <h3>Secure Authentication</h3>
+                <p>Firebase Auth with email/password login, persistent sessions, and auto-login. Every user sees only
+                    their own workspace — clean and private by design.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon ic-green">⚡</div>
+                <h3>BLoC State Management</h3>
+                <p>Built with flutter_bloc 8.x and clean architecture. Predictable state transitions, testable BLoCs,
+                    and separated concerns from data layer to UI.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon ic-blue">🌓</div>
+                <h3>Dark &amp; Light Theme</h3>
+                <p>Full dark/light mode powered by ThemeCubit with hydrated_bloc for persistence. Theme preference
+                    survives app restarts — no flicker on launch.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon ic-amber">📊</div>
+                <h3>Task Prioritization</h3>
+                <p>Low, Medium, and High priority levels with visual color coding. Filter tasks by status — All, Active,
+                    or Completed — to keep focus where it matters.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features">
+        <p class="section-eyebrow reveal">Under the Hood</p>
+        <h2 class="section-heading reveal">Engineered for scale &amp; clarity</h2>
+        <p class="section-sub reveal">A portfolio-grade architecture that teaches as much as it ships.</p>
+
+        <div class="features-grid">
+            <div class="feature-item reveal">
+                <div class="feature-dot"></div>
+                <div>
+                    <h4>Clean Architecture Layers</h4>
+                    <p>Domain, Data, and Presentation layers are fully separated. Repositories abstract Firebase,
+                        keeping business logic framework-agnostic.</p>
+                </div>
+            </div>
+            <div class="feature-item reveal">
+                <div class="feature-dot"></div>
+                <div>
+                    <h4>Stream-Driven Task Updates</h4>
+                    <p>TaskBloc integrates Firestore StreamSubscriptions so UI stays in sync with the server — no
+                        polling, no stale data.</p>
+                </div>
+            </div>
+            <div class="feature-item reveal">
+                <div class="feature-dot"></div>
+                <div>
+                    <h4>Dependency Injection via GetIt</h4>
+                    <p>Service locator pattern wires repositories and data sources at startup — making the codebase
+                        testable and modular.</p>
+                </div>
+            </div>
+            <div class="feature-item reveal">
+                <div class="feature-dot"></div>
+                <div>
+                    <h4>Form Validation with BLoC</h4>
+                    <p>Login and register forms use dedicated BLoC patterns with inline error states — real-time
+                        validation before any Firebase call is made.</p>
+                </div>
+            </div>
+            <div class="feature-item reveal">
+                <div class="feature-dot"></div>
+                <div>
+                    <h4>Due Dates &amp; Completion Status</h4>
+                    <p>Every task supports a due date and toggle completion. Overdue tasks surface automatically with
+                        clear visual indicators.</p>
+                </div>
+            </div>
+            <div class="feature-item reveal">
+                <div class="feature-dot"></div>
+                <div>
+                    <h4>Workspace-Level Organization</h4>
+                    <p>Each user gets a default workspace. Projects live inside workspaces — a clean hierarchy that
+                        scales naturally to team use cases.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+        <p class="section-eyebrow reveal">Pricing</p>
+        <h2 class="section-heading reveal">Simple, transparent plans</h2>
+        <p class="section-sub reveal">Start free. Upgrade when you're ready to collaborate at scale.</p>
+
+        <div class="pricing-grid">
+            <!-- Basic -->
+            <div class="pricing-card reveal">
+                <p class="plan-name">Basic</p>
+                <div class="plan-price">$0 <sub>/mo</sub></div>
+                <p class="plan-desc">Perfect for solo builders and learners getting started with ProjectEra.</p>
+                <ul class="plan-features">
+                    <li>1 Workspace</li>
+                    <li>Up to 5 Projects</li>
+                    <li>Unlimited Tasks</li>
+                    <li>Firebase Sync</li>
+                    <li>Dark &amp; Light Theme</li>
+                </ul>
+                <a href="#contact" class="plan-btn plan-btn-outline">Get Started Free</a>
+            </div>
+
+            <!-- Pro -->
+            <div class="pricing-card popular reveal">
+                <div class="popular-tag">Most Popular</div>
+                <p class="plan-name">Pro</p>
+                <div class="plan-price">$9 <sub>/mo</sub></div>
+                <p class="plan-desc">For developers and small teams who want real-time collaboration and priority
+                    features.</p>
+                <ul class="plan-features">
+                    <li>Unlimited Workspaces</li>
+                    <li>Unlimited Projects</li>
+                    <li>Real-time Team Collaboration</li>
+                    <li>Priority Levels + Due Dates</li>
+                    <li>Task Filtering &amp; Sorting</li>
+                    <li>Firebase Storage (Files)</li>
+                </ul>
+                <a href="#contact" class="plan-btn plan-btn-solid">Start Pro Trial</a>
+            </div>
+
+            <!-- Enterprise -->
+            <div class="pricing-card reveal">
+                <p class="plan-name">Enterprise</p>
+                <div class="plan-price">$29 <sub>/mo</sub></div>
+                <p class="plan-desc">For teams that need advanced access controls, analytics, and dedicated support.</p>
+                <ul class="plan-features">
+                    <li>Everything in Pro</li>
+                    <li>Role-based Access Control</li>
+                    <li>Activity Logs &amp; Audit Trail</li>
+                    <li>Custom Workspace Branding</li>
+                    <li>Priority Email Support</li>
+                    <li>SLA Uptime Guarantee</li>
+                </ul>
+                <a href="#contact" class="plan-btn plan-btn-outline">Contact Sales</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+        <p class="section-eyebrow reveal">Testimonials</p>
+        <h2 class="section-heading reveal">Loved by developers &amp; teams</h2>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card reveal">
+                <div class="quote-mark">"</div>
+                <p class="testimonial-text">ProjectEra completely changed how I manage freelance work. The real-time
+                    sync means I never have stale tasks across my laptop and phone. The BLoC architecture is chef's
+                    kiss.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar av-1">A</div>
+                    <div>
+                        <div class="author-name">Aisha Rahman</div>
+                        <div class="author-role">Flutter Developer, Freelance</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card reveal">
+                <div class="quote-mark">"</div>
+                <p class="testimonial-text">We adopted ProjectEra for our 8-person dev team and onboarding was instant.
+                    The Firebase integration is rock solid, and the dark mode is the best I've seen in any task tool.
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar av-2">D</div>
+                    <div>
+                        <div class="author-name">Daniel Osei</div>
+                        <div class="author-role">CTO, Buildify Labs</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card reveal">
+                <div class="quote-mark">"</div>
+                <p class="testimonial-text">As someone learning BLoC, the way ProjectEra is structured is genuinely
+                    educational. The code comments and pattern separation helped me understand state management in
+                    hours, not weeks.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar av-3">M</div>
+                    <div>
+                        <div class="author-name">Maria Santos</div>
+                        <div class="author-role">Junior Flutter Dev, Bootcamp Grad</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <p class="section-eyebrow reveal">FAQ</p>
+        <h2 class="section-heading reveal">Common questions</h2>
+
+        <div class="faq-list">
+            <div class="faq-item reveal">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    What platforms does ProjectEra support?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">ProjectEra is built with Flutter, so it runs natively on Android and iOS. A web
+                    version is also available via Firebase Hosting. All platforms sync in real time through Firestore.
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Do I need a Firebase account?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">For self-hosting the open-source version, yes — you'll need a Firebase project
+                    with Auth and Firestore enabled. The hosted version (Basic/Pro/Enterprise) handles all Firebase
+                    infrastructure for you.</div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Is the source code available?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">Yes. ProjectEra is open source and available on GitHub. It was built as a
+                    portfolio and BLoC learning project, so the code is thoroughly documented with architecture
+                    explanations and learning comments.</div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Can I use this to learn Flutter BLoC?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">Absolutely — that's one of its primary goals. The codebase progresses from
+                    simple Cubits (ThemeCubit) to complex real-time Blocs (TaskBloc), with inline learning comments at
+                    each step explaining the why behind every pattern choice.</div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    How is offline support handled?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">Firestore's built-in offline persistence caches data locally. TaskBloc is
+                    designed to handle stream reconnection gracefully, and hydrated_bloc persists UI state so the app
+                    feels instant even before data loads.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <p class="section-eyebrow reveal">Contact</p>
+        <h2 class="section-heading reveal">Get in touch</h2>
+
+        <div class="contact-wrapper">
+            <div class="contact-info reveal">
+                <p class="section-sub" style="margin-top:0">Have a question, want to collaborate, or just want to say
+                    hi? Reach out — I'd love to hear from you.</p>
+                <div class="contact-links">
+                    <a href="mailto:hello@projectera.app" class="contact-link">
+                        <span class="contact-link-icon">✉️</span>
+                        hello@projectera.app
+                    </a>
+                    <a href="https://github.com" target="_blank" class="contact-link">
+                        <span class="contact-link-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                        </span>
+                        github.com/projectera
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="contact-link">
+                        <span class="contact-link-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 110-4.14 2.07 2.07 0 010 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45C23.21 24 24 23.23 24 22.28V1.72C24 .77 23.21 0 22.22 0z" />
+                            </svg>
+                        </span>
+                        linkedin.com/in/projectera
+                    </a>
+                </div>
+            </div>
+
+            <form class="contact-form reveal" onsubmit="handleForm(event)">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" placeholder="Your name" required />
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="you@example.com" required />
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea placeholder="Tell me what's on your mind..."></textarea>
+                </div>
+                <button type="submit" class="btn-primary" style="align-self:flex-start">Send Message →</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">Project<span>Era</span></div>
+        <p>© 2025 ProjectEra. Built with Flutter &amp; Firebase.</p>
+        <div class="footer-socials">
+            <a href="#" class="social-btn" aria-label="GitHub">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="LinkedIn">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 110-4.14 2.07 2.07 0 010 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45C23.21 24 24 23.23 24 22.28V1.72C24 .77 23.21 0 22.22 0z" />
+                </svg>
+            </a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
