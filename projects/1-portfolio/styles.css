@@ -105,8 +105,6 @@ body {
    ===================== */
 .navbar {
     position: fixed;
-    z-index: 100;
-    background: rgba(5, 5, 5, 0.95);
     top: 0;
     left: 0;
     right: 0;
