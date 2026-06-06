@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dooit — To-Do App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- floating blobs -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <div class="app">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-top">
+        <div class="logo">
+          <span class="logo-icon">✅</span>
+          <span class="logo-text">Doo<span>it</span></span>
+        </div>
+        <div class="counter-badge" id="counterBadge">
+          <span id="counterNum">0</span> left
+        </div>
+      </div>
+      <p class="header-sub" id="headerSub">Nothing on your list — enjoy the freedom! 🎉</p>
+    </header>
+
+    <!-- ADD TASK -->
+    <div class="add-card">
+      <div class="add-row">
+        <input
+          type="text"
+          id="taskInput"
+          class="task-input"
+          placeholder="What needs doing? ✏️"
+          maxlength="80"
+          autocomplete="off"
+        />
+        <button class="add-btn" id="addBtn" aria-label="Add task">
+          <span>+</span>
+        </button>
+      </div>
+      <div class="priority-row">
+        <span class="priority-label">Priority:</span>
+        <button class="pill pill-low active-pill"  data-priority="low"    id="pLow">🟢 Low</button>
+        <button class="pill pill-med"              data-priority="medium" id="pMed">🟡 Medium</button>
+        <button class="pill pill-high"             data-priority="high"   id="pHigh">🔴 High</button>
+      </div>
+    </div>
+
+    <!-- FILTERS -->
+    <div class="filter-bar">
+      <button class="filter-btn active-filter" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="active">Active</button>
+      <button class="filter-btn" data-filter="completed">Done ✓</button>
+      <button class="clear-btn" id="clearCompleted">Clear Done</button>
+    </div>
+
+    <!-- TASK LIST -->
+    <ul class="task-list" id="taskList">
+      <!-- tasks injected here -->
+    </ul>
+
+    <!-- EMPTY STATE -->
+    <div class="empty-state" id="emptyState">
+      <div class="empty-illustration">🌈</div>
+      <p>No tasks here!</p>
+      <span>Add one above to get started</span>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
