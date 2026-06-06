@@ -1,0 +1,366 @@
+/* ─── RESET & BASE ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --body-bg:      #2a2016;
+  --calc-body:    #c8b89a;
+  --calc-dark:    #a8956e;
+  --calc-darker:  #8a7555;
+  --display-bg:   #1a2e1a;
+  --display-text: #7fff5f;
+  --display-dim:  #3a5c3a;
+  --btn-num-top:  #d4c4a8;
+  --btn-num-bot:  #a89470;
+  --btn-fn-top:   #b8a888;
+  --btn-fn-bot:   #8a7050;
+  --btn-op-top:   #e8a040;
+  --btn-op-bot:   #b06010;
+  --btn-eq-top:   #e85030;
+  --btn-eq-bot:   #a02010;
+  --text-dark:    #2a1a08;
+  --text-light:   #fff5e8;
+  --shadow-inset: rgba(0,0,0,0.4);
+  --shadow-out:   rgba(0,0,0,0.7);
+}
+
+body {
+  background: var(--body-bg);
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.015) 0px,
+      rgba(255,255,255,0.015) 1px,
+      transparent 1px,
+      transparent 8px
+    );
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Share Tech Mono', monospace;
+  padding: 2rem 1rem;
+}
+
+/* ─── SCENE & SHADOW ─── */
+.scene {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calc-shadow {
+  width: 85%;
+  height: 28px;
+  background: radial-gradient(ellipse, rgba(0,0,0,0.7) 0%, transparent 70%);
+  margin-top: -6px;
+  border-radius: 50%;
+  filter: blur(8px);
+}
+
+/* ─── CALCULATOR BODY ─── */
+.calculator {
+  width: 320px;
+  background: linear-gradient(170deg, var(--calc-body) 0%, var(--calc-dark) 50%, var(--calc-darker) 100%);
+  border-radius: 18px 18px 24px 24px;
+  padding: 18px 18px 20px;
+  position: relative;
+  z-index: 1;
+
+  /* thick molded plastic look */
+  box-shadow:
+    0 2px 0 rgba(255,255,255,0.5) inset,     /* top light edge */
+    0 -2px 0 rgba(0,0,0,0.3) inset,          /* bottom dark edge */
+    2px 0 0 rgba(255,255,255,0.25) inset,    /* left light */
+    -2px 0 0 rgba(0,0,0,0.2) inset,          /* right dark */
+    0 20px 60px rgba(0,0,0,0.6),             /* main shadow */
+    0 4px 8px rgba(0,0,0,0.4);
+
+  /* subtle surface texture */
+  background-image:
+    linear-gradient(170deg, #d8c8a8 0%, #b09878 50%, #987855 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%23b09878'/%3E%3Ccircle cx='1' cy='1' r='0.5' fill='%23987858' opacity='0.3'/%3E%3C/svg%3E");
+}
+
+/* ─── BRAND STRIP ─── */
+.brand-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 14px;
+  padding: 0 4px;
+}
+
+.brand-name {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 3px;
+  color: #5a3a18;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.3);
+}
+.brand-name span { color: var(--btn-op-bot); }
+
+.brand-model {
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  color: #7a5a38;
+  opacity: 0.8;
+}
+
+/* ─── DISPLAY ─── */
+.display-housing {
+  background: #3a3028;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 16px;
+  position: relative;
+
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.5) inset,
+    0 1px 0 rgba(255,255,255,0.15),
+    0 -1px 0 rgba(0,0,0,0.4);
+}
+
+.display-inner {
+  background: var(--display-bg);
+  border-radius: 4px;
+  padding: 10px 14px 8px;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  overflow: hidden;
+
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,0.6),
+    0 2px 8px rgba(0,0,0,0.8) inset,
+    0 0 20px rgba(127,255,95,0.08) inset;
+
+  /* scanline effect */
+  background-image:
+    linear-gradient(
+      to bottom,
+      transparent 50%,
+      rgba(0,0,0,0.08) 50%
+    );
+  background-size: 100% 4px;
+}
+
+.display-expression {
+  font-size: 0.72rem;
+  color: var(--display-dim);
+  letter-spacing: 1px;
+  min-height: 18px;
+  text-align: right;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.display-main {
+  font-family: 'Orbitron', monospace;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--display-text);
+  letter-spacing: 2px;
+  text-align: right;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-shadow:
+    0 0 10px rgba(127,255,95,0.6),
+    0 0 20px rgba(127,255,95,0.3);
+  transition: font-size 0.1s;
+}
+
+/* shrink for long numbers */
+.display-main.small  { font-size: 1.7rem; }
+.display-main.xsmall { font-size: 1.2rem; }
+
+/* corner screws */
+.display-screws { pointer-events: none; }
+.screw {
+  position: absolute;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #6a5a48, #2a1a08);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.6), 0 0 0 1px rgba(0,0,0,0.4);
+}
+.screw::after {
+  content: '';
+  position: absolute;
+  width: 60%; height: 2px;
+  background: rgba(0,0,0,0.5);
+  top: 50%; left: 20%;
+  transform: translateY(-50%) rotate(45deg);
+}
+.screw.tl { top: 4px;  left: 4px; }
+.screw.tr { top: 4px;  right: 4px; }
+.screw.bl { bottom: 4px; left: 4px; }
+.screw.br { bottom: 4px; right: 4px; }
+
+/* ─── KEYPAD ─── */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* ─── BUTTONS BASE ─── */
+.btn {
+  position: relative;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  height: 58px;
+  user-select: none;
+  outline: none;
+  transition: transform 0.06s, box-shadow 0.06s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* raised 3-D effect via box-shadow */
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.22) 0%,
+    transparent 50%,
+    rgba(0,0,0,0.15) 100%
+  );
+  pointer-events: none;
+}
+
+.btn:active,
+.btn.pressed {
+  transform: translateY(3px);
+}
+
+/* ─── NUMBER BUTTONS ─── */
+.btn-num {
+  background: linear-gradient(to bottom, var(--btn-num-top), var(--btn-num-bot));
+  color: var(--text-dark);
+  box-shadow:
+    0 5px 0 #7a6040,
+    0 6px 6px rgba(0,0,0,0.4),
+    0 1px 0 rgba(255,255,255,0.6) inset;
+}
+.btn-num:active, .btn-num.pressed {
+  box-shadow:
+    0 2px 0 #7a6040,
+    0 3px 4px rgba(0,0,0,0.4),
+    0 1px 0 rgba(255,255,255,0.4) inset;
+}
+
+/* ─── FUNCTION BUTTONS (AC, +/-, %) ─── */
+.btn-fn {
+  background: linear-gradient(to bottom, var(--btn-fn-top), var(--btn-fn-bot));
+  color: var(--text-dark);
+  box-shadow:
+    0 5px 0 #5a4020,
+    0 6px 6px rgba(0,0,0,0.4),
+    0 1px 0 rgba(255,255,255,0.5) inset;
+}
+.btn-fn:active, .btn-fn.pressed {
+  box-shadow:
+    0 2px 0 #5a4020,
+    0 3px 4px rgba(0,0,0,0.4),
+    0 1px 0 rgba(255,255,255,0.3) inset;
+}
+.btn-clear {
+  background: linear-gradient(to bottom, #cc8844, #884422);
+  color: var(--text-light);
+  box-shadow:
+    0 5px 0 #5a2810,
+    0 6px 6px rgba(0,0,0,0.4),
+    0 1px 0 rgba(255,255,255,0.4) inset;
+}
+.btn-clear:active, .btn-clear.pressed {
+  box-shadow:
+    0 2px 0 #5a2810,
+    0 3px 4px rgba(0,0,0,0.4),
+    0 1px 0 rgba(255,255,255,0.3) inset;
+}
+
+/* ─── OPERATOR BUTTONS ─── */
+.btn-op {
+  background: linear-gradient(to bottom, var(--btn-op-top), var(--btn-op-bot));
+  color: var(--text-light);
+  font-size: 1.3rem;
+  box-shadow:
+    0 5px 0 #7a3800,
+    0 6px 6px rgba(0,0,0,0.4),
+    0 1px 0 rgba(255,255,255,0.4) inset;
+}
+.btn-op:active, .btn-op.pressed {
+  box-shadow:
+    0 2px 0 #7a3800,
+    0 3px 4px rgba(0,0,0,0.4),
+    0 1px 0 rgba(255,255,255,0.3) inset;
+}
+.btn-op.active-op {
+  background: linear-gradient(to bottom, #fff5e0, #e8a040);
+  color: #4a2000;
+}
+
+/* ─── EQUALS BUTTON ─── */
+.btn-eq {
+  background: linear-gradient(to bottom, var(--btn-eq-top), var(--btn-eq-bot));
+  color: var(--text-light);
+  font-size: 1.3rem;
+  box-shadow:
+    0 5px 0 #6a0800,
+    0 6px 6px rgba(0,0,0,0.5),
+    0 1px 0 rgba(255,255,255,0.4) inset;
+}
+.btn-eq:active, .btn-eq.pressed {
+  box-shadow:
+    0 2px 0 #6a0800,
+    0 3px 4px rgba(0,0,0,0.4),
+    0 1px 0 rgba(255,255,255,0.3) inset;
+}
+
+/* ─── ZERO BUTTON (wide) ─── */
+.btn-zero {
+  grid-column: span 2;
+  text-align: left;
+  padding-left: 22px;
+}
+
+/* ─── BOTTOM STRIP ─── */
+.bottom-strip {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 14px;
+  padding: 0 4px;
+  font-size: 0.55rem;
+  letter-spacing: 1.5px;
+  color: #7a5a38;
+  opacity: 0.75;
+}
+
+/* ─── ERROR STATE ─── */
+.display-main.error {
+  color: #ff6040;
+  text-shadow: 0 0 10px rgba(255,80,40,0.6);
+  font-size: 1.1rem;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 400px) {
+  .calculator { width: 290px; padding: 14px; }
+  .btn { height: 52px; font-size: 1rem; }
+  .keypad { gap: 8px; }
+  .display-main { font-size: 2rem; }
+}
