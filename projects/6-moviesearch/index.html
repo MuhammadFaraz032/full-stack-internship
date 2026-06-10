@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CineVault — Movie Search</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="#" class="logo" id="logoBtn">CINE<span>VAULT</span></a>
+
+            <!-- This search bar is ONLY visible after searching -->
+            <div class="header-search" id="headerSearch">
+                <input type="text" id="headerSearchInput" placeholder="Search movies..." autocomplete="off" />
+                <button id="headerSearchBtn" class="btn-search">Search</button>
+            </div>
+
+            <nav class="nav-tabs">
+                <button class="nav-tab active" data-view="search">Search</button>
+                <button class="nav-tab" data-view="favourites">Favourites <span class="fav-count"
+                        id="favCount">0</span></button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Mobile search bar — shown below header after search -->
+    <div class="mobile-search-bar" id="mobileSearchBar">
+        <input type="text" id="mobileSearchInput" placeholder="Search movies..." autocomplete="off" />
+        <button id="mobileSearchBtn" class="btn-search">Search</button>
+    </div>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- SEARCH VIEW -->
+        <section class="view active" id="searchView">
+
+            <!-- Hero — hidden after search -->
+            <div class="hero" id="hero">
+                <h1 class="hero-title">Find Your Next<br /><em>Obsession</em></h1>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search movies, directors, actors..."
+                        autocomplete="off" />
+                    <button id="searchBtn" class="btn-search">Search</button>
+                </div>
+                <div class="filters">
+                    <select id="genreFilter" class="filter-select">
+                        <option value="">All Genres</option>
+                        <option value="Action">Action</option>
+                        <option value="Comedy">Comedy</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Horror">Horror</option>
+                        <option value="Sci-Fi">Sci-Fi</option>
+                        <option value="Thriller">Thriller</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Animation">Animation</option>
+                        <option value="Documentary">Documentary</option>
+                        <option value="Crime">Crime</option>
+                    </select>
+                    <select id="yearFilter" class="filter-select">
+                        <option value="">All Years</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Filters row shown AFTER search (below header) -->
+            <div class="filters-bar" id="filtersBar">
+                <select id="genreFilter2" class="filter-select">
+                    <option value="">All Genres</option>
+                    <option value="Action">Action</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Sci-Fi">Sci-Fi</option>
+                    <option value="Thriller">Thriller</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Animation">Animation</option>
+                    <option value="Documentary">Documentary</option>
+                    <option value="Crime">Crime</option>
+                </select>
+                <select id="yearFilter2" class="filter-select">
+                    <option value="">All Years</option>
+                </select>
+            </div>
+
+            <!-- Status messages -->
+            <div class="status" id="status"></div>
+
+            <!-- Movie Grid -->
+            <div class="movie-grid" id="movieGrid"></div>
+
+            <!-- Pagination -->
+            <div class="pagination" id="pagination"></div>
+
+        </section>
+
+        <!-- DETAIL VIEW -->
+        <section class="view" id="detailView">
+            <button class="btn-back" id="backBtn">← Back to Results</button>
+            <div class="detail-container" id="detailContainer"></div>
+        </section>
+
+        <!-- FAVOURITES VIEW -->
+        <section class="view" id="favouritesView">
+            <div class="fav-header">
+                <h2 class="section-title">Your Favourites</h2>
+                <button class="btn-clear-fav" id="clearFavBtn">Clear All</button>
+            </div>
+            <div class="status" id="favStatus"></div>
+            <div class="movie-grid" id="favGrid"></div>
+        </section>
+
+    </main>
+
+    <!-- LOADER -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-reel"></div>
+        <div class="loader-text">Searching...</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
